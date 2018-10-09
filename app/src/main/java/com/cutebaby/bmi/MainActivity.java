@@ -27,12 +27,15 @@ public class MainActivity extends AppCompatActivity {
     public void bmi(View view){
         Log.d("MainActivity","bmi");
 //        最耗費時間→findViewById
+//        取得輸入方塊元件，取得輸入文字
         String w = edWeight.getText().toString();
         String h = edHeight.getText().toString();
+//        持行中印出讀取值+改成浮點數
         Log.d("MainActivity",w+"/"+h);
         float weight = Float.parseFloat(w);
         float height = Float.parseFloat(h);
         float bmi = weight/(height*height);
+//        印出運算中的bmi值
         Log.d("MainActivity",bmi+"");
 //        一定要打show才會顯示
         Toast.makeText(this,"Your  Bmi  is  "+bmi,Toast.LENGTH_LONG).show();
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         new AlertDialog.Builder(this).setMessage("Your  Bmi  is  "+bmi)
 //        設定對話框中的標題
                 .setTitle("BMI")
-//      設定一個button關掉對話框，並且執行onClick中的指令
+//       設定一個button關掉對話框，並且執行onClick中的指令
                 .setPositiveButton("OK",null)
                 .setNegativeButton("Clear", new DialogInterface.OnClickListener() {
                     @Override
