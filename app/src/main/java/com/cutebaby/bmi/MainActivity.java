@@ -5,6 +5,10 @@ package com.cutebaby.bmi;
 //快速鍵，寫出interface中的規範→alt+enter
 //快速鍵，刪除一行→ctrl+x
 //快速鍵，讓已寫的程式變成方法→ctrl+alt+m(Refactoralt→Methods)
+//快速鍵，切換視窗→ctrl+e
+//快速鍵，直接commit→ctrl+ ~
+//快速鍵，抽出String→alt+enter
+
 import android.content.DialogInterface;
 import android.os.strictmode.CleartextNetworkViolation;
 import android.support.v7.app.AlertDialog;
@@ -39,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("MainActivity","OnClick : help");
                 new AlertDialog.Builder(MainActivity.this)
-                        .setMessage("The Body mass index")
-                        .setPositiveButton("OK",null)
+                        .setMessage(R.string.bmi_infro)
+                        .setPositiveButton(R.string.ok,null)
                         .show();
             }
         });
@@ -60,14 +64,14 @@ public class MainActivity extends AppCompatActivity {
 //        印出運算中的bmi值
         Log.d("MainActivity",bmi+"");
 //        一定要打show才會顯示
-        Toast.makeText(this,"Your  Bmi  is  "+bmi,Toast.LENGTH_LONG).show();
+        Toast.makeText(this,getString(R.string.your_bmi_is)+bmi,Toast.LENGTH_LONG).show();
 //        設定對話框中的文字
-        new AlertDialog.Builder(this).setMessage("Your  Bmi  is  "+bmi)
+        new AlertDialog.Builder(this).setMessage(getString(R.string.your_bmi_is)+bmi)
 //        設定對話框中的標題
-                .setTitle("BMI")
+                .setTitle(R.string.bmi)
 //       設定一個button關掉對話框，並且執行onClick中的指令
-                .setPositiveButton("OK",null)
-                .setNegativeButton("Clear", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok,null)
+                .setNegativeButton(R.string.clear, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         edWeight.setText("");
