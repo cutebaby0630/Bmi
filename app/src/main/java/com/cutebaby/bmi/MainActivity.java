@@ -2,6 +2,8 @@ package com.cutebaby.bmi;
 //快速鍵，區域變數變成屬性→ctrl+alt+f
 //快速鍵，整行往上→shift+alt+上鍵
 //快速鍵，顯示提示→ctrl+p
+//快速鍵，寫出interface中的規範→alt+enter
+//快速鍵，刪除一行→ctrl+x
 import android.content.DialogInterface;
 import android.os.strictmode.CleartextNetworkViolation;
 import android.support.v7.app.AlertDialog;
@@ -9,12 +11,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText edWeight;
-    private EditText edHeight;
+       private EditText edWeight;
+       private EditText edHeight;
 
 
     @Override
@@ -23,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         edWeight = findViewById(R.id.ed_weight);
         edHeight = findViewById(R.id.ed_height);
+        Button help = findViewById(R.id.help);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("MainActivity","OnClick : help");
+            }
+        });
+
     }
     public void bmi(View view){
         Log.d("MainActivity","bmi");
