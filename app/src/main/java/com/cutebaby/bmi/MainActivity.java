@@ -4,6 +4,7 @@ package com.cutebaby.bmi;
 //快速鍵，顯示提示→ctrl+p
 //快速鍵，寫出interface中的規範→alt+enter
 //快速鍵，刪除一行→ctrl+x
+//快速鍵，讓已寫的程式變成方法→ctrl+alt+m
 import android.content.DialogInterface;
 import android.os.strictmode.CleartextNetworkViolation;
 import android.support.v7.app.AlertDialog;
@@ -18,23 +19,33 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
        private EditText edWeight;
        private EditText edHeight;
+       private Button help;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViews();
+
+    }
+
+    private void findViews() {
         edWeight = findViewById(R.id.ed_weight);
         edHeight = findViewById(R.id.ed_height);
-        Button help = findViewById(R.id.help);
+        help = findViewById(R.id.help);
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("MainActivity","OnClick : help");
+                new AlertDialog.Builder(MainActivity.this)
+                        .setMessage("The Body mass index")
+                        .setPositiveButton("OK",null)
+                        .show();
             }
         });
-
     }
+
     public void bmi(View view){
         Log.d("MainActivity","bmi");
 //        最耗費時間→findViewById
