@@ -4,7 +4,7 @@ package com.cutebaby.bmi;
 //快速鍵，顯示提示→ctrl+p
 //快速鍵，寫出interface中的規範→alt+enter
 //快速鍵，刪除一行→ctrl+x
-//快速鍵，讓已寫的程式變成方法→ctrl+alt+m
+//快速鍵，讓已寫的程式變成方法→ctrl+alt+m(Refactoralt→Methods)
 import android.content.DialogInterface;
 import android.os.strictmode.CleartextNetworkViolation;
 import android.support.v7.app.AlertDialog;
