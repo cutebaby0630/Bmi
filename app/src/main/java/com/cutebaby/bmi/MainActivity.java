@@ -66,8 +66,9 @@ public class MainActivity extends AppCompatActivity {
         float bmi = weight/(height*height);
         //        印出運算中的bmi值
         Log.d("MainActivity",bmi+"");
-
+//        Intent put
         Intent intent = new Intent(this,ResultActivity.class);
+        intent.putExtra("BMI",bmi);
         startActivity(intent);
 //        一定要打show才會顯示
 //        Toast.makeText(this,getString(R.string.your_bmi_is)+bmi,Toast.LENGTH_LONG).show();
