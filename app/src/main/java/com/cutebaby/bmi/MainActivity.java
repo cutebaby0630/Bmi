@@ -8,10 +8,12 @@ package com.cutebaby.bmi;
 //快速鍵，切換視窗→ctrl+e
 //快速鍵，直接commit→ctrl+ ~
 //快速鍵，抽出String→alt+enter
-
+//快速鍵，複寫→ctrl+o
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.PersistableBundle;
 import android.os.strictmode.CleartextNetworkViolation;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,6 +37,48 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         findViews();
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("MainActivity","onPause");
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
+        Log.d("MainActivity","onCreate");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("MainActivity","onDestroy");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("MainActivity","onResume");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("MainActivity","onRestart");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("MainActivity","onStart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("MainActivity","onStop");
     }
 
     private void findViews() {
@@ -72,11 +116,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 //        一定要打show才會顯示
 //        Toast.makeText(this,getString(R.string.your_bmi_is)+bmi,Toast.LENGTH_LONG).show();
-//      設定對話框中的文字
+//       設定對話框中的文字
 //        new AlertDialog.Builder(this).setMessage(getString(R.string.your_bmi_is)+bmi)
 //        設定對話框中的標題
 //                .setTitle(R.string.bmi)
-//    設定一個button關掉對話框，並且執行onClick中的指令
+//       設定一個button關掉對話框，並且執行onClick中的指令
 //                .setPositiveButton(R.string.ok,null)
 //                .setNegativeButton(R.string.clear, new DialogInterface.OnClickListener() {
 //                    @Override
